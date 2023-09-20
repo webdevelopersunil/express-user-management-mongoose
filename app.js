@@ -26,12 +26,11 @@ app.set('view engine','ejs');
 app.set('views', path.join(__dirname,'views'));
 
 
-app.get('/', (req, res) => {
-    return res.render('./homepage');
-})
+// Routes Start
 
+app.use('/',require('./routes/home'));
 
-
+// Routes End
 
 app.listen(port, function(err){
     if(err){
