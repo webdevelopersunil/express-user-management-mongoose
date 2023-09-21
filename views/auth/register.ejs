@@ -2,15 +2,24 @@
 <p class="output">GO back to <a href="login">login</a> or <a href="forgot-password">Forgot Your Password</a>.</p>
 
 <form action="user/register" method="post">
-    <div class="input">
-        <input type="text" name="name" required /> <span class="errorcode"> Full Name</span>
-    </div>
-    <div class="input">
-        <input type="email" name="email" required /> <span class="errorcode"> Email</span>
-    </div>
-    <div class="input">
-        <input type="text" name="password" required /> <span class="errorcode"> Password</span>
-    </div>
+
+    <section>
+        <label for="name">name</label>
+        <input id="name" name="name" type="text" autocomplete="name" required autofocus>
+    </section>
+    <section>
+        <label for="username">Username</label>
+        <input id="username" name="username" type="text" autocomplete="username" required autofocus>
+    </section>
+    <section>
+        <label for="email">Email Address</label>
+        <input id="email" name="email" type="email" autocomplete="email" required autofocus>
+    </section>
+    <section>
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" autocomplete="password" required>
+    </section>
 
     <input type="submit" value="Register">
-</form>
+    
+</form> 

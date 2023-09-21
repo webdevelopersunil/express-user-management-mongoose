@@ -9,6 +9,7 @@ module.exports.register = (req, res) => {
     console.log(req.body);
 
     User.create({
+        username:   req.body.username,
         email   :   req.body.email,
         name    :   req.body.name,
         password:   req.body.password
