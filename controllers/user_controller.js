@@ -34,12 +34,12 @@ module.exports.login = (req, res) => {
     console.log(req.body);
     
     User.findOne({
-        email   :   req.body.email
+        username   :   req.body.username
     })
     .then(newUser => {
-        console.log('@@@@@@@', newUser.email);
+        console.log('@@@@@@@', newUser.username);
 
-        cookieParser({email : newUser.email });
+        cookieParser({email : newUser.username });
 
         return res.redirect('/user/profile');
     })
