@@ -46,6 +46,11 @@ app.set('views', path.join(__dirname,'views'));
 
 app.use('/',require('./routes/home'));
 app.use('/user',require('./routes/auth.js'));
+app.use('/post',require('./routes/post.js'));
+
+app.use(function(req, res, next) {
+    res.status(404).render('error/404');
+});
 
 
 
