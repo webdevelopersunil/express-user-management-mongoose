@@ -10,6 +10,10 @@ const port = 8000;
 // calling express here as a function, This app function will have the all functionality which needed to run a Server.
 const app = express();
 
+// Cookie parser
+const cookieParser = require('cookie-parser');
+app.use(cookieParser());
+
 // middleware for parsing the form data
 app.use(express.json())
 app.use(express.urlencoded());

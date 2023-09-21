@@ -1,5 +1,9 @@
 const User = require('../models/User');
 
+// initialize the cookie-parser
+const cookieParser = require('cookie-parser');
+
+
 module.exports.register = (req, res) => {
     
     console.log(req.body);
@@ -20,7 +24,7 @@ module.exports.register = (req, res) => {
 }
 
 module.exports.profile = (req, res) => {
-
+    
     return res.render('backend/profile');
 }
 
@@ -32,7 +36,10 @@ module.exports.login = (req, res) => {
         email   :   req.body.email
     })
     .then(newUser => {
-        console.log('@@@@@@@', newUser);
+        console.log('@@@@@@@', newUser.email);
+
+        cookieParser({email : newUser.email });
+
         return res.redirect('/user/profile');
     })
     .catch(err => {
