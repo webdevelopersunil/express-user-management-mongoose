@@ -1,11 +1,16 @@
 <h1>Login <span class="errorcode"> TERMINAL</span></h1>
 <p class="output">GO back to <a href="login">login</a> or <a href="forgot-password">Forgot Your Password</a>.</p>
 
-<form action="" method="POST">
+<form action="user/register" method="post">
     <div class="input">
-        <input type="email" name="email" required /> <span class="errorcode"> Terminal</span>
+        <input type="text" name="name" required /> <span class="errorcode"> Full Name</span>
+    </div>
+    <div class="input">
+        <input type="email" name="email" required /> <span class="errorcode"> Email</span>
     </div>
     <div class="input">
         <input type="text" name="password" required /> <span class="errorcode"> Password</span>
     </div>
+
+    <input type="submit" value="Register">
 </form>

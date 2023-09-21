@@ -3,7 +3,7 @@ module.exports.home = (req, res) => {
         title : "HomePage" 
     };
     return res.render('homepage');
-}
+} 
 
 module.exports.login = (req, res) => {
     const metadata = {
