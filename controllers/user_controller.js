@@ -37,11 +37,12 @@ module.exports.login = (req, res) => {
         username   :   req.body.username
     })
     .then(newUser => {
-        console.log('@@@@@@@', newUser.username);
+        console.log('@@@@@@@', newUser);
 
-        cookieParser({email : newUser.username });
-
-        return res.redirect('/user/profile');
+        if(newUser){
+            return res.redirect('/user/profile');
+        }
+        return res.redirect('back');
     })
     .catch(err => {
         console.log('error occurs :', err);
